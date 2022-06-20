@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 import pandas as pd
 
 
-engine = create_engine('sqlite:///desaster_project.db')
+engine = create_engine('sqlite:///disaster_project.db')
 df = pd.read_sql_table('disaster_message', engine)
 df.head()
 
@@ -83,4 +83,4 @@ display_results(y_test, y_new_pred)
 
 
 import joblib
-joblib.dump(cv2, 'model.pkl')
+joblib.dump(cv2, '..app/model.pkl')
