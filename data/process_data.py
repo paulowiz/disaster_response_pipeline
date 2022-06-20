@@ -12,7 +12,7 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
-    # Grab the desaster categories and separate in individual tables
+    # Grab the disaster categories and separate in individual tables
     categories =  df['categories'].str.split(';', expand=True)
     row = categories.iloc[0]
     row = [x.split('-')[0] for x in row]
