@@ -82,13 +82,13 @@ def build_model():
 
     parameters = {
         'vect__ngram_range': ((1, 1), (1, 2)),
-        'vect__max_df': (0.75, 1.0),
+        'vect__max_df': (0.6, 1.0),
         'tfidf__use_idf': (True, False)
     }
 
-    cv = GridSearchCV(pipeline, param_grid=parameters, cv=3)
+    # cv = GridSearchCV(pipeline, param_grid=parameters, cv=3)
 
-    return cv
+    return pipeline
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
@@ -104,16 +104,13 @@ def evaluate_model(model, X_test, Y_test, category_names):
     """
 
     # predicted values
-    Y_pred = model.predict(X_test)
+    Y_pred = model.predict(X_test)[0]
 
-    accuracy = (Y_pred == Y_test).mean()
-
-    for col in Y_test.columns:
+    for col in category_names:
         print("category: ", col)
-        classification_report(Y_test[col], Y_pred[col])
+        print(classification_report(Y_test[col], Y_pred))
 
-    print("Labels:", category_names)
-    print("Accuracy:", accuracy)
+    print(classification_report(Y_test[col], Y_pred, labels=category_names))
     pass
 
 
