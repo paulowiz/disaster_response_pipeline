@@ -1,5 +1,7 @@
 import sys
 import nltk
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.svm import LinearSVC
 from sqlalchemy import create_engine
 
 nltk.download(['punkt', 'wordnet'])
@@ -10,8 +12,8 @@ import pandas as pd
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from sklearn.pipeline import Pipeline
-from sklearn.metrics import confusion_matrix
-from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.model_selection import train_test_split, GridSearchCV, RepeatedKFold
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.multioutput import MultiOutputClassifier
@@ -77,7 +79,16 @@ def build_model():
         ('tfidf', TfidfTransformer()),
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
-    return pipeline
+
+    parameters = {
+        'vect__ngram_range': ((1, 1), (1, 2)),
+        'vect__max_df': (0.75, 1.0),
+        'tfidf__use_idf': (True, False)
+    }
+
+    cv = GridSearchCV(pipeline, param_grid=parameters, cv=3)
+
+    return cv
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
@@ -91,8 +102,15 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
     return None
     """
-    y_pred = model.predict(X_test)
-    accuracy = (y_pred == Y_test).mean()
+
+    # predicted values
+    Y_pred = model.predict(X_test)
+
+    accuracy = (Y_pred == Y_test).mean()
+
+    for col in Y_test.columns:
+        print("category: ", col)
+        classification_report(Y_test[col], Y_pred[col])
 
     print("Labels:", category_names)
     print("Accuracy:", accuracy)
