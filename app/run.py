@@ -17,6 +17,14 @@ app = Flask(__name__)
 
 
 def tokenize(text):
+    """
+        Tokenize a text into tokens and apply lemmatizer method on them.
+
+        input
+         text  disaster message
+
+        return clean_tokens  array of words from the disaster message
+    """
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
 
@@ -26,6 +34,7 @@ def tokenize(text):
         clean_tokens.append(clean_tok)
 
     return clean_tokens
+
 
 # load data
 engine = create_engine('sqlite:///../data/disaster_project.db')
@@ -66,7 +75,7 @@ def index():
             }
         }
     ]
-    
+
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
@@ -78,7 +87,7 @@ def index():
 @app.route('/go')
 def go():
     # save user input in query
-    query = request.args.get('query', '') 
+    query = request.args.get('query', '')
 
     # use model to predict classification for query
     classification_labels = model.predict([query])[0]
