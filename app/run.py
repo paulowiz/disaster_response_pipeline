@@ -27,7 +27,6 @@ def tokenize(text):
 
     return clean_tokens
 
-
 # load data
 engine = create_engine('sqlite:///../data/disaster_project.db')
 df = pd.read_sql_table('disaster_message', engine)
@@ -67,11 +66,10 @@ def index():
             }
         }
     ]
-
+    
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
-
     # render web page with plotly graphs
     return render_template('master.html', ids=ids, graphJSON=graphJSON)
 
@@ -80,7 +78,7 @@ def index():
 @app.route('/go')
 def go():
     # save user input in query
-    query = request.args.get('query', '')
+    query = request.args.get('query', '') 
 
     # use model to predict classification for query
     classification_labels = model.predict([query])[0]
