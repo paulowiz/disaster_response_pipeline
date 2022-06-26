@@ -26,18 +26,31 @@
 
 <!-- ABOUT THE PROJECT -->
 ## 🤔 Introduction
-Disaster messages are used for any emergencial situations in the world, People who needs help or reporting some problem in the enviroment, that could be a disaster if it wont be fixed in time. The project consist in a webapp where the user can input a new message and get classification results in several categories (Floating, Military, Earthquake, etc.). I have trained a model with this message 
+Disaster messages have been used for any emergencial situations in the world, people who needs help or needs to report disaster situations related about enviroment, security, wether, etc. The project consist in a webapp where the user can input a new message and get classification results in several categories (Floating, Military, Earthquake, etc.), classified by machine learning model that I have trained.
 
 
 
 <br /> 
 
 ---
+<!-- SETUP -->
+
+## 🔥 Setup
+
+#### Copy or rename the file
+
+```
+$ pip install requirements.txt
+```
+
+<br />
+
+---
 
 
 <!-- INSTALLATION -->
 
-## 🔨 Installation
+## 🔨 Installation and Running
 
 1. Run the following commands in the project's root directory to set up your database and model.
 
@@ -55,73 +68,39 @@ Disaster messages are used for any emergencial situations in the world, People w
 
 ---
 
-
-<!-- SETUP -->
-
-## 🔥 Setup
-
-#### Copy or rename the file
-
-```
-$ cp .env-examples .env
-$ npx knex migrate:latest
-$ npx knex seed:run
-```
-
-<br />
-
----
-
-
-<!-- RUNNING TESTS -->
-
-## 🤓 Running tests
-
-```
-$ npm run test
-```
-
-<br />
-
----
-
-
-<!-- RUNNING APPLICATION -->
-
-## 🎲 Running the application
-
-```bash
-
-# Run the application
-$ npm run start
-
-```
-
-<br />
-
----
-
-
-<!-- RUNNING -->
-
 #### Or Run Docker 🐳
 ```
-$ docker network create node-net
+$ docker build . --tag img_disaster_project:latest &&
+$ docker rm -f disaster_project &&
+$ docker run -d  -p 80:80 --name disaster_project img_disaster_project:latest &&
 ```
-```
-$ docker-compose up -d
-```
-
 <br />
 
 ---
 
+<!-- File Overview -->
 
+## 📚 Project files overview
+
+- app
+  - template
+    - master.html # main page of web app
+    - go.html # classification result page of web app
+   - run.py # Flask file that runs app
+- data
+  - disaster_categories.csv # data to process
+  - disaster_messages.csv # data to process
+  - process_data.py # clean, process and save data for training the machine learning model
+  - disaster_project.db # database to save clean data to
+- models
+  - train_classifier.py # train model
+  - classifier.pkl # saved model 
+- README.md
 <!-- LICENSE -->
 
 ## 🔓 License
 
-This project lives under MIT License. See LICENSE for more details. © - [Erlan Lucio](https://www.linkedin.com/in/erlanlucio/)
+This project lives under MIT License. See LICENSE for more details. © - [Paulo Mota](https://www.linkedin.com/in/paulo-mota-955218a2/)
 
 <br />
 
