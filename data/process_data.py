@@ -41,7 +41,6 @@ def clean_data(df):
         categories[column] = [x.split('-')[-1] for x in categories[column]]
         categories[column] = categories[column].astype(int)
         categories[column] = categories[column].replace(2, 1)
-        categories[column] = categories[column].apply(lambda x: [y if y <= 1 else 1 for y in x])
 
     # drop old categories' column from the main dataframe
     df.drop(['categories'], axis=1, inplace=True)
