@@ -104,13 +104,17 @@ def evaluate_model(model, X_test, Y_test, category_names):
     """
 
     # predicted values
-    Y_pred = model.predict(X_test)[0]
+    Y_pred = model.predict(X_test)
+    df_predict = pd.DataFrame()
+    for col, idx in zip(category_names, range(0, len(category_names))):
+        arr_tmp = []
+        for item in Y_pred:
+            arr_tmp.append(item[idx])
+        df_predict[col] = arr_tmp
 
     for col in category_names:
         print("category: ", col)
-        print(classification_report(Y_test[col], Y_pred))
-
-    print(classification_report(Y_test[col], Y_pred, labels=category_names))
+        print(classification_report(Y_test[col], df_predict[col]))
     pass
 
 
@@ -140,7 +144,10 @@ def main():
         model = build_model()
 
         print('Training model...')
-        model.fit(X_train, Y_train)
+        # model.fit(X_train, Y_train)
+        import joblib
+
+        model = joblib.load('models/classifier.pkl')
 
         print('Evaluating model...')
         evaluate_model(model, X_test, Y_test, category_names)
