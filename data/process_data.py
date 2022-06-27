@@ -4,6 +4,15 @@ from sqlalchemy import create_engine
 
 
 def load_data(messages_filepath, categories_filepath):
+    """
+    Load data from datasets
+
+    input:
+    messages_filepath   filepath to messages csv file
+    categories_filepath  filepath to categories csv file
+
+    return  df merged with messages and categories
+    """
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
     # Merge dataframes
@@ -12,8 +21,16 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
+    """
+    Clean data from dataframe
+
+    input:
+    df  dataframe merged with messages and categories
+
+    return df dataframe cleaned
+    """
     # Grab the disaster categories and separate in individual tables
-    categories =  df['categories'].str.split(';', expand=True)
+    categories = df['categories'].str.split(';', expand=True)
     row = categories.iloc[0]
     row = [x.split('-')[0] for x in row]
     category_colnames = row
@@ -23,9 +40,11 @@ def clean_data(df):
     for column in categories:
         categories[column] = [x.split('-')[-1] for x in categories[column]]
         categories[column] = categories[column].astype(int)
+        categories[column] = categories[column].replace(2, 1)
+        categories[column] = categories[column].apply(lambda x: [y if y <= 1 else 1 for y in x])
 
     # drop old categories' column from the main dataframe
-    df.drop(['categories'], axis=1, inplace = True)
+    df.drop(['categories'], axis=1, inplace=True)
 
     # Add id column to the new categories dataframe to merge them
     categories['id'] = df['id']
@@ -37,12 +56,23 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
-    engine = create_engine('sqlite:///'+database_filename)
-    df.to_sql('disaster_message', engine, index=False)
-    pass  
+    """
+    Save dataframe into sqlite database
+
+    input:
+    df  dataframe cleaned
+
+    return None
+    """
+    engine = create_engine('sqlite:///' + database_filename)
+    df.to_sql('disaster_message', engine, index=False, if_exists='replace')
+    pass
 
 
 def main():
+    """
+    Main method that call all functions in the right sequence
+    """
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
@@ -53,18 +83,18 @@ def main():
 
         print('Cleaning data...')
         df = clean_data(df)
-        
+
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
-        
+
         print('Cleaned data saved to database!')
-    
+
     else:
-        print('Please provide the filepaths of the messages and categories '\
-              'datasets as the first and second argument respectively, as '\
-              'well as the filepath of the database to save the cleaned data '\
-              'to as the third argument. \n\nExample: python process_data.py '\
-              'disaster_messages.csv disaster_categories.csv '\
+        print('Please provide the filepaths of the messages and categories ' \
+              'datasets as the first and second argument respectively, as ' \
+              'well as the filepath of the database to save the cleaned data ' \
+              'to as the third argument. \n\nExample: python process_data.py ' \
+              'disaster_messages.csv disaster_categories.csv ' \
               'DisasterResponse.db')
 
 
