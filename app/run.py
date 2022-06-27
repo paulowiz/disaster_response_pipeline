@@ -8,7 +8,9 @@ from nltk.tokenize import word_tokenize
 from flask import Flask
 from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
+from plotly.graph_objs import Line
 # from sklearn.externals import joblib
+from plotly.graph_objs.layout import Polar
 from sqlalchemy import create_engine
 import joblib
 from sklearn.ensemble import RandomForestClassifier
@@ -76,20 +78,38 @@ def index():
         },
         {
             'data': [
-                Bar(
+                Line(
                     x=genre_names,
                     y=genre_counts
                 )
             ],
 
             'layout': {
-                'title': 'Distribution of Message Genres',
+                'title': 'Distribution of Genres Line Chart',
+                'yaxis': {
+                    'title': "Genre"
+                },
+                'xaxis': {
+                    'title': "Count"
+                },
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=genre_counts,
+                    y=genre_names
+                )
+            ],
+
+            'layout': {
+                'title': 'Distribution of Genres by Count',
                 'yaxis': {
                     'title': "Count"
                 },
                 'xaxis': {
                     'title': "Genre"
-                }
+                },
             }
         }
     ]

@@ -82,9 +82,9 @@ def build_model():
 
     parameters = {
         'vect__ngram_range': ((1, 1), (1, 2)),
-        'vect__max_df': (0.2, 1.0),
-        'tfidf__use_idf': (True, False),
-        'clf__criterion': ("gini", "entropy", "log_loss")
+        'vect__max_df': (0.5, 0.75, 1.0),
+        'vect__max_features': (None, 5000, 10000),
+        'tfidf__use_idf': (True, False)
     }
 
     cv = GridSearchCV(pipeline, param_grid=parameters, cv=3)
