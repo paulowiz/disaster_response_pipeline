@@ -82,13 +82,14 @@ def build_model():
 
     parameters = {
         'vect__ngram_range': ((1, 1), (1, 2)),
-        'vect__max_df': (0.6, 1.0),
-        'tfidf__use_idf': (True, False)
+        'vect__max_df': (0.2, 1.0),
+        'tfidf__use_idf': (True, False),
+        'clf__criterion': ("gini", "entropy", "log_loss")
     }
 
-    # cv = GridSearchCV(pipeline, param_grid=parameters, cv=3)
+    cv = GridSearchCV(pipeline, param_grid=parameters, cv=3)
 
-    return pipeline
+    return cv
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
@@ -144,10 +145,7 @@ def main():
         model = build_model()
 
         print('Training model...')
-        # model.fit(X_train, Y_train)
-        import joblib
-
-        model = joblib.load('models/classifier.pkl')
+        model.fit(X_train, Y_train)
 
         print('Evaluating model...')
         evaluate_model(model, X_test, Y_test, category_names)
