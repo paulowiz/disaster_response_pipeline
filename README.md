@@ -16,9 +16,9 @@
     <img alt="Disaster" src="https://github.com/paulowiz/assets/blob/main/disaster_project.gif">
     <br />
     <br />
-    <a href="https://github.com/lucioerlan/Soap-Automation/issues">Report Bug</a>
+    <a href="https://github.com/paulowiz/disaster_response_pipeline/issues">Report Bug</a>
     ·
-    <a href="https://github.com/lucioerlan/Soap-Automation/issues">Request Feature</a>
+    <a href="https://github.com/paulowiz/disaster_response_pipeline/issues">Request Feature</a>
   </p>
 </p>
 
