@@ -26,7 +26,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## 🤔 Introduction
-Disaster messages have been used for any emergencial situations in the world, people who needs help or needs to report disaster situations related about enviroment, security, wether, etc. The project consist in a webapp where the user can input a new message and get classification results in several categories (Floating, Military, Earthquake, etc.), classified by machine learning model that I have trained.
+Disaster messages have been used for any emergency situations in the world, people who need help or need to report disaster situations related to the environment, security, weather, etc. The project consists of a web app where the user can input a new message and get classification results in several categories (Floating, Military, Earthquake, etc.), classified by the machine learning model that I have trained.
 
 
 
