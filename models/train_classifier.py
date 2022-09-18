@@ -3,8 +3,8 @@ import nltk
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import LinearSVC
 from sqlalchemy import create_engine
-
-nltk.download(['punkt', 'wordnet'])
+nltk.download('all')
+# nltk.download(['punkt', 'wordnet'])
 
 import re
 import numpy as np
