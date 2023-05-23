@@ -42,7 +42,7 @@ gdown==4.4.0
 glom==22.1.0
 greenlet==1.1.2
 h11==0.13.0
-huggingface-hub==0.4.0
+huggingface-hub==0.13.4
 idna==3.3
 importlib-metadata==4.12.0
 importlib-resources==5.4.0
