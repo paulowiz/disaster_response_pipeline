@@ -89,7 +89,7 @@ parso==0.8.3
 passlib==1.7.4
 pefile==2021.9.3
 pickleshare==0.7.5
-Pillow==9.0.0
+Pillow==10.0.0
 plotly==5.9.0
 prometheus-client==0.13.1
 prompt-toolkit==3.0.28
