@@ -98,7 +98,7 @@ pyarrow==8.0.0
 pycparser==2.21
 pydantic==1.9.0
 Pygments==2.11.2
-pyinstaller==4.7
+pyinstaller==5.13.1
 pyinstaller-hooks-contrib==2021.4
 PyJWT==1.6.4
 pyOpenSSL==21.0.0
