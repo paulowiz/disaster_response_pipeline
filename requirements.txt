@@ -35,7 +35,7 @@ fastapi==0.73.0
 fastparquet==0.8.1
 filelock==3.4.2
 Flask==2.1.2
-fonttools==4.33.3
+fonttools==4.43.0
 fsspec==2022.5.0
 future==0.18.2
 gdown==4.4.0
@@ -138,7 +138,7 @@ torchvision==0.11.3
 tornado==6.1
 tqdm==4.62.3
 traitlets==5.1.1
-transformers==4.16.2
+transformers==4.36.0
 trio==0.19.0
 trio-websocket==0.9.2
 typing-extensions==4.0.1
