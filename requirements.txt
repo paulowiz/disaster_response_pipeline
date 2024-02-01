@@ -22,7 +22,7 @@ chromedriver-autoinstaller==0.2.2
 click==8.0.3
 colorama==0.4.4
 cramjam==2.5.0
-cryptography==36.0.1
+cryptography==42.0.2
 cycler==0.11.0
 debugpy==1.5.1
 decorator==5.1.1
@@ -89,7 +89,7 @@ parso==0.8.3
 passlib==1.7.4
 pefile==2021.9.3
 pickleshare==0.7.5
-Pillow==9.0.0
+Pillow==10.2.0
 plotly==5.9.0
 prometheus-client==0.13.1
 prompt-toolkit==3.0.28
@@ -138,7 +138,7 @@ torchvision==0.11.3
 tornado==6.1
 tqdm==4.62.3
 traitlets==5.1.1
-transformers==4.16.2
+transformers==4.37.0
 trio==0.19.0
 trio-websocket==0.9.2
 typing-extensions==4.0.1
