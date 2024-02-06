@@ -31,7 +31,7 @@ entrypoints==0.4
 et-xmlfile==1.1.0
 executing==0.8.3
 face==20.1.1
-fastapi==0.73.0
+fastapi==0.109.1
 fastparquet==0.8.1
 filelock==3.4.2
 Flask==2.1.2
