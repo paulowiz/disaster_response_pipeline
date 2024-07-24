@@ -142,7 +142,7 @@ transformers==4.16.2
 trio==0.19.0
 trio-websocket==0.9.2
 typing-extensions==4.0.1
-urllib3==1.26.8
+urllib3==1.26.19
 uvicorn==0.17.1
 wcwidth==0.2.5
 webencodings==0.5.1
