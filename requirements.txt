@@ -61,7 +61,7 @@ jupyter-core==4.9.2
 jupyter-server==1.13.5
 jupyterlab==3.3.0
 jupyterlab-pygments==0.3.0
-jupyterlab-server==2.10.3
+jupyterlab-server==2.27.3
 kiwisolver==1.4.2
 langdetect==1.0.9
 loguru==0.6.0
