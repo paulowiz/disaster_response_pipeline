@@ -114,7 +114,7 @@ regex==2022.1.18
 requests==2.27.1
 s3transfer==0.5.0
 sacremoses==0.0.47
-scikit-learn==1.1.1
+scikit-learn==1.5.0
 scipy==1.8.1
 seaborn==0.11.2
 selenium==4.1.0
