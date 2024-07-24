@@ -50,7 +50,7 @@ ipykernel==6.9.1
 ipython==8.1.1
 ipython-genutils==0.2.0
 itsdangerous==2.1.2
-jedi==0.18.1
+jedi==0.19.1
 Jinja2==3.0.3
 jmespath==0.10.0
 joblib==1.1.0
