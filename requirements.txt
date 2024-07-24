@@ -19,7 +19,7 @@ certifi==2021.10.8
 cffi==1.15.0
 charset-normalizer==2.0.11
 chromedriver-autoinstaller==0.2.2
-click==8.0.3
+click==8.1.7
 colorama==0.4.4
 cramjam==2.5.0
 cryptography==36.0.1
