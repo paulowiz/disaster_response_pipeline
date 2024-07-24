@@ -7,7 +7,7 @@ updates:
     commit-message:
       prefix: "deps"
       prefix-development: "dev-deps"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 100
     ignore:
       - dependency-name: "django"
         versions: ["3.x"]
