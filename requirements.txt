@@ -1,4 +1,4 @@
-altgraph==0.17.2
+altgraph==0.17.4
 anyio==3.5.0
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
