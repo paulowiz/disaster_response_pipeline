@@ -96,7 +96,7 @@ prompt-toolkit==3.0.28
 pure-eval==0.2.2
 pyarrow==8.0.0
 pycparser==2.21
-pydantic==1.9.0
+pydantic==2.8.2
 Pygments==2.11.2
 pyinstaller==4.7
 pyinstaller-hooks-contrib==2021.4
