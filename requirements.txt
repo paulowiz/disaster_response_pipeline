@@ -84,7 +84,7 @@ openpyxl==3.0.9
 outcome==1.1.0
 packaging==21.3
 pandas==1.4.0
-pandocfilters==1.5.0
+pandocfilters==1.5.1
 parso==0.8.4
 passlib==1.7.4
 pefile==2021.9.3
