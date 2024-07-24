@@ -35,7 +35,7 @@ fastapi==0.73.0
 fastparquet==0.8.1
 filelock==3.4.2
 Flask==2.1.2
-fonttools==4.33.3
+fonttools==4.43.0
 fsspec==2022.5.0
 future==0.18.2
 gdown==4.4.0
