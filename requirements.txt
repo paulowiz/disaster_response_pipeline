@@ -125,7 +125,7 @@ sniffio==1.2.0
 sortedcontainers==2.4.0
 soupsieve==2.3.1
 SQLAlchemy==1.4.36
-stack-data==0.2.0
+stack-data==0.6.3
 starlette==0.17.1
 tenacity==8.0.1
 terminado==0.13.2
