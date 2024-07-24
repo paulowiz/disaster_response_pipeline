@@ -38,7 +38,7 @@ Flask==2.1.2
 fonttools==4.33.3
 fsspec==2022.5.0
 future==0.18.2
-gdown==4.4.0
+gdown==5.2.0
 glom==22.1.0
 greenlet==1.1.2
 h11==0.13.0
