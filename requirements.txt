@@ -59,7 +59,7 @@ jsonschema==4.4.0
 jupyter-client==7.1.2
 jupyter-core==4.9.2
 jupyter-server==1.13.5
-jupyterlab==3.3.0
+jupyterlab==3.6.7
 jupyterlab-pygments==0.1.2
 jupyterlab-server==2.10.3
 kiwisolver==1.4.2
