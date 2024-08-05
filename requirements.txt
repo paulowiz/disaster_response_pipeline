@@ -136,7 +136,7 @@ torch==1.10.2
 torchaudio==0.10.2
 torchvision==0.11.3
 tornado==6.1
-tqdm==4.62.3
+tqdm==4.66.5
 traitlets==5.1.1
 transformers==4.16.2
 trio==0.19.0
