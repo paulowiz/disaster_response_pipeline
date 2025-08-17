@@ -132,13 +132,13 @@ terminado==0.13.2
 testpath==0.6.0
 threadpoolctl==3.1.0
 tokenizers==0.11.4
-torch==1.10.2
+torch==2.8.0
 torchaudio==0.10.2
 torchvision==0.11.3
 tornado==6.1
 tqdm==4.62.3
 traitlets==5.1.1
-transformers==4.16.2
+transformers==4.53.0
 trio==0.19.0
 trio-websocket==0.9.2
 typing-extensions==4.0.1
