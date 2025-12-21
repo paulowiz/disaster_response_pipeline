@@ -33,7 +33,7 @@ executing==0.8.3
 face==20.1.1
 fastapi==0.73.0
 fastparquet==0.8.1
-filelock==3.4.2
+filelock==3.20.1
 Flask==2.1.2
 fonttools==4.33.3
 fsspec==2022.5.0
@@ -132,7 +132,7 @@ terminado==0.13.2
 testpath==0.6.0
 threadpoolctl==3.1.0
 tokenizers==0.11.4
-torch==1.10.2
+torch==2.2.0
 torchaudio==0.10.2
 torchvision==0.11.3
 tornado==6.1
